@@ -44,14 +44,13 @@ docker compose run --rm app php artisan test
 docker compose run --rm app php -r 'echo PHP_VERSION, PHP_EOL;'
 ```
 
-## Create your private GitHub repository
+## Repository
 
-The session's GitHub integration could authenticate but rejected repository creation with `Resource not accessible by integration (createRepository)`. No remote repository was created.
-
-With a GitHub CLI login that has repository-creation permission, run this from the project directory:
+Source: https://github.com/Nuxview/PHP2SHELL
 
 ```sh
-gh repo create php-memory-lab --private --source=. --remote=origin --push
+git clone https://github.com/Nuxview/PHP2SHELL.git
+cd PHP2SHELL
 ```
 
-The project already contains an initial local Git commit. Do not commit `.env` or `vendor/`.
+Then follow the Docker instructions above. The repository is public. Local `.env` files, generated secrets, and installed dependencies are excluded from Git.
