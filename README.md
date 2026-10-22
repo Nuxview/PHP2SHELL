@@ -22,7 +22,7 @@ The image includes Composer and PHP for a convenient local setup; it is not a pr
 3. Compare the consequences: crashes, sensitive memory disclosure, or code running with the PHP worker's privileges. Access to database credentials and writable site files can extend the damage. Operating-system root access is not automatic.
 4. Connect this to WordPress or Laravel: they run on the PHP interpreter. A flaw reached before their code starts cannot be fixed by application authentication or a framework update.
 
-The diagram only advances through text states in your browser. It does not allocate excessive memory, corrupt native memory, or issue attack requests. The patched app cannot establish whether another server is vulnerable. Different server interfaces and configurations have different reachable paths; a demonstrated mod_php exploit does not establish an identical FPM exploit.
+The SVG diagram updates alongside each explanation: it shows the worker or initialization state, a reference arrow, and memory blocks. Use **Next step** to see unfinished or freed memory become invalid; **Reset** and the vulnerability selector return to step one. Dashed outlines and text labels distinguish unfinished or freed data, while pink marks invalid state being used. The diagram is a conceptual model in your browser. It does not allocate excessive memory, corrupt native memory, or issue attack requests. The patched app cannot establish whether another server is vulnerable. Different server interfaces and configurations have different reachable paths; a demonstrated mod_php exploit does not establish an identical FPM exploit.
 
 ## What to do
 
